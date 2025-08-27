@@ -16,6 +16,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative; /* 로고의 절대 위치 기준 */
+        }
+        .logo-top-right {
+            position: absolute;
+            top: 15px; /* 상단에서 15px */
+            right: 15px; /* 오른쪽에서 15px */
+            width: 80px; /* 로고 너비 설정 */
+            height: auto; /* 비율 유지 */
+            z-index: 1000; /* 다른 요소 위에 표시 */
         }
         .title {
             color: #2e8b57;
@@ -93,9 +102,20 @@
         .sunday {
             color: #FF0000;
         }
+
+        /* 모바일 기기에서의 로고 크기 조정 (선택 사항) */
+        @media (max-width: 600px) {
+            .logo-top-right {
+                width: 60px; /* 작은 화면에서 로고 크기 줄임 */
+                top: 10px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <img src="대야미성당로고p.png" alt="대야미 성당 로고" class="logo-top-right">
 
     <div class="title">2025년 창조시기 생태달력</div>
     <div class="subtitle">(날짜를 누르세요)</div>
@@ -330,7 +350,6 @@
                 }
             });
             
-            // 오늘 날짜 하이라이트 기능
             const today = new Date();
             const currentYear = today.getFullYear();
             const currentMonth = today.getMonth() + 1;
@@ -339,7 +358,6 @@
             dayLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href) {
-                    // 파일명 형식을 'YYYY-MM-DD.html'로 가정하고 날짜 파싱
                     const datePart = href.replace('.html', '');
                     const [year, month, day] = datePart.split('-').map(Number);
                     
