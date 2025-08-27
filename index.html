@@ -1,276 +1,310 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>창조시기 생태달력</title>
-    <style>
-        body {
-            font-family: 'sans-serif';
-            text-align: center;
-            background-color: #f0f8ff;
-            min-height: 100vh;
-            padding: 20px 0; /* 패딩 최소화 */
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .title {
-            color: #2e8b57;
-            font-size: 2em; /* 폰트 크기 줄임 */
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #000000;
-            font-size: 1em; /* 폰트 크기 줄임 */
-            margin-bottom: 20px;
-        }
-        .calendar-section {
-            width: 95%; /* 화면 너비에 맞게 조절 */
-            max-width: 800px;
-        }
-        .month-header {
-            font-size: 1.8em;
-            color: #2e8b57;
-            margin-bottom: 15px;
-        }
-        .day-list {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px; /* 간격 최소화 */
-            width: 100%;
-        }
-        .day {
-            background-color: #ffffff;
-            border-radius: 10px; /* 모서리 둥글기 줄임 */
-            padding: 15px 5px; /* 패딩 줄임 */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            font-size: 1.2em; /* 폰트 크기 줄임 */
-            color: #333;
-            line-height: 1.2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .day:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        .day-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-        .day-number {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .day-of-week {
-            font-size: 0.7em;
-            color: #666;
-            margin-top: 3px;
-        }
-        .empty-day {
-            visibility: hidden;
-        }
-        .footer {
-            display: none; /* 모바일 가로 화면에서 숨김 */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025년 9월-10월 기도문 달력</title>
+    <style>
+        body {
+            font-family: 'sans-serif';
+            text-align: center;
+            background-color: #f0f8ff;
+            min-height: 100vh;
+            padding: 20px 0; /* 패딩 최소화 */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            color: #2e8b57;
+            font-size: 2em; /* 폰트 크기 줄임 */
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #000000;
+            font-size: 1em; /* 폰트 크기 줄임 */
+            margin-bottom: 20px;
+        }
+        .calendar-section {
+            width: 95%; /* 화면 너비에 맞게 조절 */
+            max-width: 800px;
+        }
+        .month-header {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        .day-list {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px; /* 간격 최소화 */
+            width: 100%;
+        }
+        .day {
+            background-color: #ffffff;
+            border-radius: 10px; /* 모서리 둥글기 줄임 */
+            padding: 15px 5px; /* 패딩 줄임 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1.2em; /* 폰트 크기 줄임 */
+            color: #333;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .day-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .day-number {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .day-of-week {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 3px;
+        }
+        .empty-day {
+            visibility: hidden;
+        }
+        .footer {
+            display: none; /* 모바일 가로 화면에서 숨김 */
+        }
+    </style>
 </head>
 <body>
 
-    <div class="title">2025년 창조시기 생태달력</div>
-    <div class="subtitle">(날짜를 누르세요)</div>
+    <div class="title">2025년 9월~10월 기도문 달력</div>
+    <div class="subtitle">(날짜를 누르세요)</div>
 
-    <div class="calendar-section">
-        <div class="day-list">
-            <div class="day empty-day"></div>
-            <a href="prayer_2025-09-01.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">1</span>
-                    <span class="day-of-week">(월)</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-02.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">2</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-03.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">3</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-04.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">4</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-05.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">5</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-06.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">6</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-07.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">7</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-08.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">8</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-09.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">9</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-10.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">10</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-11.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">11</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-12.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">12</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-13.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">13</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-14.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">14</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-15.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">15</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-16.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">16</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-17.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">17</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-18.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">18</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-19.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">19</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-20.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">20</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-21.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">21</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-22.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">22</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-23.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">23</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-24.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">24</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-25.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">25</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-26.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">26</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-27.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">27</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-28.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">28</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-29.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">29</span>
-                </div>
-            </a>
-            <a href="prayer_2025-09-30.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">30</span>
-                </div>
-            </a>
-            <a href="prayer_2025-10-01.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">10/1</span>
-                </div>
-            </a>
-            <a href="prayer_2025-10-02.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">10/2</span>
-                </div>
-            </a>
-            <a href="prayer_2025-10-03.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">10/3</span>
-                </div>
-            </a>
-            <a href="prayer_2025-10-04.html" class="day-link">
-                <div class="day">
-                    <span class="day-number">10/4</span>
-                </div>
-            </a>
-        </div>
-    </div>
+    <div class="calendar-section">
+        <div class="month-header">9월 - 10월</div>
+        <div class="day-list">
+            <div class="day empty-day"></div>
+            <a href="prayer_2025-09-01.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">1</span>
+                    <span class="day-of-week">(월)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-02.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">2</span>
+                    <span class="day-of-week">(화)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-03.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">3</span>
+                    <span class="day-of-week">(수)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-04.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">4</span>
+                    <span class="day-of-week">(목)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-05.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">5</span>
+                    <span class="day-of-week">(금)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-06.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">6</span>
+                    <span class="day-of-week">(토)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-07.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">7</span>
+                    <span class="day-of-week">(일)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-08.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">8</span>
+                    <span class="day-of-week">(월)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-09.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">9</span>
+                    <span class="day-of-week">(화)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-10.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10</span>
+                    <span class="day-of-week">(수)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-11.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">11</span>
+                    <span class="day-of-week">(목)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-12.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">12</span>
+                    <span class="day-of-week">(금)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-13.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">13</span>
+                    <span class="day-of-week">(토)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-14.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">14</span>
+                    <span class="day-of-week">(일)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-15.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">15</span>
+                    <span class="day-of-week">(월)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-16.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">16</span>
+                    <span class="day-of-week">(화)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-17.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">17</span>
+                    <span class="day-of-week">(수)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-18.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">18</span>
+                    <span class="day-of-week">(목)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-19.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">19</span>
+                    <span class="day-of-week">(금)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-20.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">20</span>
+                    <span class="day-of-week">(토)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-21.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">21</span>
+                    <span class="day-of-week">(일)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-22.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">22</span>
+                    <span class="day-of-week">(월)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-23.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">23</span>
+                    <span class="day-of-week">(화)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-24.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">24</span>
+                    <span class="day-of-week">(수)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-25.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">25</span>
+                    <span class="day-of-week">(목)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-26.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">26</span>
+                    <span class="day-of-week">(금)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-27.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">27</span>
+                    <span class="day-of-week">(토)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-28.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">28</span>
+                    <span class="day-of-week">(일)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-29.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">29</span>
+                    <span class="day-of-week">(월)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-09-30.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">30</span>
+                    <span class="day-of-week">(화)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-10-01.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/1</span>
+                    <span class="day-of-week">(수)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-10-02.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/2</span>
+                    <span class="day-of-week">(목)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-10-03.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/3</span>
+                    <span class="day-of-week">(금)</span>
+                </div>
+            </a>
+            <a href="prayer_2025-10-04.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/4</span>
+                    <span class="day-of-week">(토)</span>
+                </div>
+            </a>
+        </div>
+    </div>
 
-    <div class="footer">
-        <img src="대야미성당로고p.png" alt="대야미 성당 로고">
-        <span>대야미 성당</span>
-    </div>
+    <div class="footer">
+        <img src="대야미성당로고p.png" alt="대야미 성당 로고">
+        <span>대야미 성당</span>
+    </div>
 
 </body>
 </html>
