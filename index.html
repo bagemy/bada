@@ -10,44 +10,46 @@
             text-align: center;
             background-color: #f0f8ff;
             min-height: 100vh;
-            padding: 50px 0;
+            padding: 20px 0; /* 패딩 최소화 */
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .title {
-            margin-top: 30px;
             color: #2e8b57;
-            font-size: 3em;
+            font-size: 2em; /* 폰트 크기 줄임 */
             line-height: 1.2;
+            margin-bottom: 10px;
         }
         .subtitle {
             color: #000000;
-            font-size: 1.5em;
-            margin-top: 10px;
-            margin-bottom: 50px;
+            font-size: 1em; /* 폰트 크기 줄임 */
+            margin-bottom: 20px;
         }
         .calendar-section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 0 20px;
+            width: 95%; /* 화면 너비에 맞게 조절 */
+            max-width: 800px;
         }
         .month-header {
-            font-size: 3em;
+            font-size: 1.8em;
             color: #2e8b57;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         .day-list {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 20px;
+            gap: 5px; /* 간격 최소화 */
             width: 100%;
         }
         .day {
             background-color: #ffffff;
-            border-radius: 20px;
-            padding: 30px 10px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border-radius: 10px; /* 모서리 둥글기 줄임 */
+            padding: 15px 5px; /* 패딩 줄임 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
-            font-size: 2.5em;
+            font-size: 1.2em; /* 폰트 크기 줄임 */
             color: #333;
             line-height: 1.2;
             display: flex;
@@ -56,8 +58,8 @@
             align-items: center;
         }
         .day:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         .day-link {
             text-decoration: none;
@@ -68,28 +70,18 @@
         }
         .day-number {
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         .day-of-week {
-            font-size: 0.6em;
+            font-size: 0.7em;
             color: #666;
-            margin-top: 5px;
+            margin-top: 3px;
         }
         .empty-day {
             visibility: hidden;
         }
         .footer {
-            position: fixed;
-            bottom: 20px;
-            right: 40px;
-            display: flex;
-            align-items: center;
-            font-size: 1.5em;
-            color: #555;
-        }
-        .footer img {
-            height: 40px;
-            margin-right: 10px;
+            display: none; /* 모바일 가로 화면에서 숨김 */
         }
     </style>
 </head>
