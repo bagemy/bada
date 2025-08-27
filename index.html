@@ -16,7 +16,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
+            position: relative; /* 로고의 절대 위치 기준 */
+        }
+        .logo-top-right {
+            position: absolute;
+            top: 15px; /* 상단에서 15px */
+            right: 15px; /* 오른쪽에서 15px */
+            width: 80px; /* 로고 너비 설정 */
+            height: auto; /* 비율 유지 */
+            z-index: 1000; /* 다른 요소 위에 표시 */
         }
         .title {
             color: #2e8b57;
@@ -81,6 +89,9 @@
         .empty-day {
             visibility: hidden;
         }
+        .footer {
+            display: none;
+        }
         .today {
             background-color: #4CAF50 !important;
             color: #ffffff !important;
@@ -91,38 +102,20 @@
         .sunday {
             color: #FF0000;
         }
-        
-        /* 로고를 오른쪽 하단에 배치하는 스타일 */
-        .footer {
-            display: block; /* 이전에 숨겨져 있던 푸터 표시 */
-            position: absolute; /* 절대 위치 지정 */
-            bottom: 15px; /* 하단에서 15px */
-            right: 15px; /* 오른쪽에서 15px */
-            z-index: 1000;
-        }
 
-        .footer img {
-            width: 50px; /* 로고 크기를 아주 작게 변경 */
-            height: auto;
-        }
-        
-        .footer span {
-            display: none; /* '대야미 성당' 텍스트 숨기기 */
-        }
-        
-        /* 모바일 기기에서의 로고 크기 조정 */
+        /* 모바일 기기에서의 로고 크기 조정 (선택 사항) */
         @media (max-width: 600px) {
-            .footer img {
-                width: 40px; /* 모바일에서 더 작게 */
-            }
-            .footer {
-                bottom: 10px;
+            .logo-top-right {
+                width: 60px; /* 작은 화면에서 로고 크기 줄임 */
+                top: 10px;
                 right: 10px;
             }
         }
     </style>
 </head>
 <body>
+
+    <img src="대야미성당로고p.png" alt="대야미 성당 로고" class="logo-top-right">
 
     <div class="title">2025년 창조시기 생태달력</div>
     <div class="subtitle">(날짜를 누르세요)</div>
@@ -142,6 +135,192 @@
                     <span class="day-of-week">화</span>
                 </div>
             </a>
+            <a href="2025-09-03.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">3</span>
+                    <span class="day-of-week">수</span>
+                </div>
+            </a>
+            <a href="2025-09-04.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">4</span>
+                    <span class="day-of-week">목</span>
+                </div>
+            </a>
+            <a href="2025-09-05.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">5</span>
+                    <span class="day-of-week">금</span>
+                </div>
+            </a>
+            <a href="2025-09-06.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">6</span>
+                    <span class="day-of-week">토</span>
+                </div>
+            </a>
+            <a href="2025-09-07.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">7</span>
+                    <span class="day-of-week">일</span>
+                </div>
+            </a>
+            <a href="2025-09-08.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">8</span>
+                    <span class="day-of-week">월</span>
+                </div>
+            </a>
+            <a href="2025-09-09.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">9</span>
+                    <span class="day-of-week">화</span>
+                </div>
+            </a>
+            <a href="2025-09-10.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10</span>
+                    <span class="day-of-week">수</span>
+                </div>
+            </a>
+            <a href="2025-09-11.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">11</span>
+                    <span class="day-of-week">목</span>
+                </div>
+            </a>
+            <a href="2025-09-12.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">12</span>
+                    <span class="day-of-week">금</span>
+                </div>
+            </a>
+            <a href="2025-09-13.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">13</span>
+                    <span class="day-of-week">토</span>
+                </div>
+            </a>
+            <a href="2025-09-14.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">14</span>
+                    <span class="day-of-week">일</span>
+                </div>
+            </a>
+            <a href="2025-09-15.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">15</span>
+                    <span class="day-of-week">월</span>
+                </div>
+            </a>
+            <a href="2025-09-16.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">16</span>
+                    <span class="day-of-week">화</span>
+                </div>
+            </a>
+            <a href="2025-09-17.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">17</span>
+                    <span class="day-of-week">수</span>
+                </div>
+            </a>
+            <a href="2025-09-18.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">18</span>
+                    <span class="day-of-week">목</span>
+                </div>
+            </a>
+            <a href="2025-09-19.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">19</span>
+                    <span class="day-of-week">금</span>
+                </div>
+            </a>
+            <a href="2025-09-20.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">20</span>
+                    <span class="day-of-week">토</span>
+                </div>
+            </a>
+            <a href="2025-09-21.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">21</span>
+                    <span class="day-of-week">일</span>
+                </div>
+            </a>
+            <a href="2025-09-22.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">22</span>
+                    <span class="day-of-week">월</span>
+                </div>
+            </a>
+            <a href="2025-09-23.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">23</span>
+                    <span class="day-of-week">화</span>
+                </div>
+            </a>
+            <a href="2025-09-24.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">24</span>
+                    <span class="day-of-week">수</span>
+                </div>
+            </a>
+            <a href="2025-09-25.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">25</span>
+                    <span class="day-of-week">목</span>
+                </div>
+            </a>
+            <a href="2025-09-26.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">26</span>
+                    <span class="day-of-week">금</span>
+                </div>
+            </a>
+            <a href="2025-09-27.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">27</span>
+                    <span class="day-of-week">토</span>
+                </div>
+            </a>
+            <a href="2025-09-28.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">28</span>
+                    <span class="day-of-week">일</span>
+                </div>
+            </a>
+            <a href="2025-09-29.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">29</span>
+                    <span class="day-of-week">월</span>
+                </div>
+            </a>
+            <a href="2025-09-30.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">30</span>
+                    <span class="day-of-week">화</span>
+                </div>
+            </a>
+            <a href="2025-10-01.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/1</span>
+                    <span class="day-of-week">수</span>
+                </div>
+            </a>
+            <a href="2025-10-02.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/2</span>
+                    <span class="day-of-week">목</span>
+                </div>
+            </a>
+            <a href="2025-10-03.html" class="day-link">
+                <div class="day">
+                    <span class="day-number">10/3</span>
+                    <span class="day-of-week">금</span>
+                </div>
+            </a>
             <a href="2025-10-04.html" class="day-link">
                 <div class="day">
                     <span class="day-number">10/4</span>
@@ -159,24 +338,29 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const dayLinks = document.querySelectorAll('.day-link');
+
             dayLinks.forEach(link => {
                 const dayEl = link.querySelector('.day');
                 const dayOfWeekText = dayEl.querySelector('.day-of-week').textContent.trim();
+
                 if (dayOfWeekText === '토') {
                     dayEl.classList.add('saturday');
                 } else if (dayOfWeekText === '일') {
                     dayEl.classList.add('sunday');
                 }
             });
+            
             const today = new Date();
             const currentYear = today.getFullYear();
             const currentMonth = today.getMonth() + 1;
             const currentDate = today.getDate();
+
             dayLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href) {
                     const datePart = href.replace('.html', '');
                     const [year, month, day] = datePart.split('-').map(Number);
+                    
                     if (currentYear === year && currentMonth === month && currentDate === day) {
                         link.querySelector('.day').classList.add('today');
                     }
