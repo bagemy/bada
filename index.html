@@ -31,11 +31,22 @@
         .calendar-section {
             width: 95%;
             max-width: 800px;
+            /* 여기에 배경 이미지 관련 CSS 추가 */
+            background-image: url('2025_SeasonCreation.png');
+            background-size: cover; /* 캘린더 섹션 전체를 덮도록 설정 */
+            background-position: center; /* 이미지 중앙 정렬 */
+            background-repeat: no-repeat; /* 이미지 반복 안함 */
+            border-radius: 15px; /* 달력 섹션 자체에 둥근 모서리 추가 (선택사항) */
+            padding: 20px; /* 내부 여백 추가 */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 그림자 추가 */
+            margin-top: 20px; /* 상단 여백 추가 */
         }
         .month-header {
             font-size: 1.8em;
             color: #2e8b57;
             margin-bottom: 15px;
+            /* 배경 이미지 위에서도 잘 보이도록 텍스트 그림자 추가 (선택사항) */
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
         }
         .day-list {
             display: grid;
@@ -44,7 +55,8 @@
             width: 100%;
         }
         .day {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.7); /* 배경 이미지 위에 반투명 흰색 레이어 추가 */
+            backdrop-filter: blur(3px); /* 배경을 흐릿하게 만들어 가독성 향상 (선택사항) */
             border-radius: 10px;
             padding: 15px 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
